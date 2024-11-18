@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <title>Connexion & Inscription - SynchroDev</title>
+
+    <meta name="description"
+        content="Connectez-vous ou créez un compte sur SynchroDev pour accéder à vos Devis, Facture, rendez-vous plus facilement. Rejoignez notre communauté de clients pour un suivi personnalisé.">
+
+    <meta name="keywords"
+        content="SynchroDev, connexion, inscription, compte client, accès rendez-vous, développement web, SEO, Charente, Barbezieux Saint-Hilaire">
+
+    <meta property="og:title" content="Connexion & Inscription - SynchroDev">
+    <meta property="og:description"
+        content="Créez un compte ou connectez-vous pour accéder aux services de SynchroDev. Rejoignez-nous pour un suivi personnalisé de votre projet web en ligne.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://synchrodev.fr/connexion-inscription">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Connexion & Inscription - SynchroDev">
+    <meta name="twitter:description"
+        content="Connectez-vous ou inscrivez-vous pour accéder aux services personnalisés de SynchroDev en Charente.">
+    <meta name="twitter:image" content="https://synchrodev.fr/images/connexion.jpg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="CSS & JS/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="CSS & JS/java.js">
+</head>
+
+<body>
+    <header class="mod-website-navigation navbar-fixed-top allowDesktopMode">
+        <a href="#" class="menu-switcher">
+			<img src="Images/barre-de-menu.png" alt="Menu" style="height: 40px; width: 40px; margin-top: -7px;">
+		</a>
+        <nav class="navigation">
+            <ul class="main-navigation">
+                <li><a href="index.html" data-button="accueil"><i class="fa fa-home"></i><span>Accueil</span></a></li>
+                <li><a href="index.html#services" data-button="services"><i class="fa fa-cog"></i><span>Services</span></a></li>
+                <li><a href="index.html#caroussel" data-button="créations"><i class="fa fa-paint-brush"></i><span>Créations</span></a></li>
+                <li><a href="prix.html" data-button="prix"><i class="fa fa-tags"></i><span>Tarifs & Devis</span></a></li>
+                <li><a href="rendezvous.html" data-button="rdvtel"><i class="fa fa-phone"></i><span>RDV téléphonique</span></a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuSwitcher = document.querySelector('.menu-switcher');
+                const navigation = document.querySelector('.mod-website-navigation');
+                const overlay = document.querySelector('.overlay');
+                const navLinks = document.querySelectorAll('.main-navigation a');
+                function closeMenu() {
+                    navigation.classList.remove('active');
+                }
+
+                if (menuSwitcher && navigation && overlay) {
+                    menuSwitcher.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        navigation.classList.toggle('active'); 
+                    });
+
+                    overlay.addEventListener('click', closeMenu);
+
+                    document.addEventListener('click', function (event) {
+                        if (!navigation.contains(event.target) && navigation.classList.contains('active')) {
+                            closeMenu();
+                        }
+                    });
+
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', closeMenu);
+                    });
+
+                    menuSwitcher.addEventListener('touchstart', function (event) {
+                        event.preventDefault();
+                        navigation.classList.toggle('active');
+                    });
+                }
+            });
+        </script>
+    </header>
+
+    <section class="mod-website-menu sortable-section MENU lazyload"
+        data-bgset=" [(max-width: 700px)] | [(max-width: 1000px)] | [(max-width: 1200px)] | ">
+        <h2>
+            <span class="title brand-color brand-titleFont">Inscription</span>
+            <span class="subtitle brand-subtitleFont2">Connexion</span>
+            <div class="divider-mark brand-bg"></div>
+        </h2>
+        <div class="auth-container"  style="margin-top: 50px;">
+            <!-- Formulaire de Connexion -->
+            <div id="loginForm" class="quick-contact2 active">
+                <h2 class="register-title">Connexion</h2>
+                <p class="register-subtitle">Connectez-vous à votre compte.</p>
+
+                <form action="#" method="post" class="login-form">
+                    <input type="email" id="login-email" name="email" placeholder="Email" required>
+                    <input type="password" id="login-password" name="password" placeholder="Mot de passe" required>
+                    <button type="submit" class="submit-button">Se connecter</button>
+                </form>
+
+                <p class="already-account">Pas encore de compte ? <a href="#" id="signup-link">S'inscrire</a></p>
+            </div>
+            <!-- Formulaire d'inscription -->
+            <div id="signupForm" class="quick-contact2">
+                <h2 class="register-title">Inscription</h2>
+                <p class="register-subtitle">Créez un compte.</p>
+
+                <form action="#" method="post" class="register-form" onsubmit="return validateForm();">
+                    <input type="text" id="firstname" name="firstname" placeholder="Prénom" required>
+                    <input type="text" id="lastname" name="lastname" placeholder="Nom" required>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+                    <input type="password" id="confirm-password" name="confirm-password"
+                        placeholder="Confirmer le mot de passe" required>
+
+                    <div id="passwordRequirements"></div>
+                    <div id="warningMessage">Vérifiez les erreurs ci-dessus.</div>
+                    <div class="consent-container">
+                        <input class="valid" type="checkbox" id="data-consent" name="data-consent" required
+                            aria-required="true" style="margin-left: 20px;">
+                        <p>J'accepte que mes données personnelles soient collectées pour établir l'inscription.</p>
+                    </div>
+
+                    <button type="submit" id="submitbutton" name="submitbutton" class="submit-button"
+                        style="margin-top: 10px;" disabled>S'inscrire</button>
+                </form>
+
+                <p class="already-account">Déjà un compte ? <a href="#" id="login-link">Se connecter</a></p>
+            </div>
+            <script>
+                // comfirmation desdeux mdp longueur etc
+                function validateForm() {
+                    const password = document.getElementById('password').value;
+                    const confirmpassword = document.getElementById('confirm-password').value;
+                    const requirements = document.getElementById('passwordRequirements');
+                    const warningMessage = document.getElementById('warningMessage');
+                    const submitbutton = document.getElementById('submitbutton');
+
+                    // Vérification des critères de sécurité
+                    let errors = [];
+
+                    if (password.length < 7) errors.push("Min. 7 caractères.");
+                    if (!/[A-Z]/.test(password)) errors.push("1 majuscule requise.");
+                    if (!/[a-z]/.test(password)) errors.push("1 minuscule requise.");
+                    if (!/[0-9]/.test(password)) errors.push("1 chiffre requis.");
+                    if (password !== confirmpassword) errors.push("Les mots de passe ne correspondent pas.");
+
+                    // Affichage des erreurs ou validation
+                    if (errors.length > 0) {
+                        requirements.innerHTML = errors.join('<br>');
+                        requirements.style.display = 'block';
+                        warningMessage.style.display = 'block';
+                        submitbutton.disabled = true;
+                        return false;
+                    } else {
+                        requirements.style.display = 'none';
+                        warningMessage.style.display = 'none';
+                        submitbutton.disabled = false;
+                        return true;
+                    }
+                }
+                document.getElementById('password').addEventListener('input', validateForm);
+                document.getElementById('confirm-password').addEventListener('input', validateForm);
+            </script>
+    </section>
+    <section class="mod-website-contacts sortable-section CONTACT_FORM"
+        data-bgset="[(max-width: 700px)] path-to-small-image.jpg | [(max-width: 1000px)] path-to-medium-image.jpg | [(max-width: 1200px)] path-to-large-image.jpg">
+        <div class="contact-banner" style="margin-bottom: 0px;">
+            <div class="contact-block-holder">
+                <div class="contact-block">
+                    <a href="index.html" class="brand-color click-tracker" data-link="contact" data-page="#contact"
+                        aria-label="Visitez SynchroDev.fr">
+                        <h3>Nous trouver</h3>
+                        SynchroDev.fr
+
+                    </a>
+                </div>
+                <div class="contact-block">
+                    <a href="mailto:synchrodev.fr@gmail.com" class="brand-color email" data-contact-link="email"
+                        aria-label="Envoyer un e-mail à SynchroDev">
+                        <h3>Nous contacter par e-mail</h3>
+                        synchrodev.fr@gmail.com
+                    </a>
+                </div>
+                <div class="contact-block">
+                    <a href="tel:+33648784857" class="brand-color" data-contact-link="phone"
+                        aria-label="Appeler SynchroDev par téléphone">
+                        <h3>Nous contacter par téléphone</h3>
+                        +33 6 48 78 48 57
+                    </a>
+                </div>
+                <a href="contact.html" class="button-contact" style="color:#fff;border: #d5f2ff79 solid 1px;"> Nous
+						contacter</a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <section class="mod-website-footer mod-has-lightbox">
+            <ul class="mod-social-links">
+                <li>
+                    <a href="https://www.facebook.com/jiji.burger/" target="_blank" data-social-link="facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@SynchroDev-fr" target="_blank" data-social-link="youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>Youtube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/synchrodev.fr/" target="_blank" data-social-link="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="mentions">
+                <a href="MentionsLégales.html">Mentions Légales</a>
+                <a href="ConditionsGénérales.html">Conditions Générales d'Utilisation (CGU)</a>
+                <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+            </div>>
+            <div class="divider brand-bg"></div>
+            <a href="index.html" target="_blank" class="brand-color">© SynchroDev</a>
+        </section>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const loginForm = document.getElementById('loginForm');
+            const signupForm = document.getElementById('signupForm');
+            const loginLink = document.getElementById('login-link');
+            const signupLink = document.getElementById('signup-link');
+
+            // Initialiser sur le formulaire de connexion
+            signupForm.classList.remove('active');
+            loginForm.classList.add('active');
+
+            // Gestion des liens de basculement
+            loginLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                loginForm.classList.add('active');
+                signupForm.classList.remove('active');
+            });
+
+            signupLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                signupForm.classList.add('active');
+                loginForm.classList.remove('active');
+            });
+        });
+
+
+    </script>
+
+    <!-- Scripts différés -->
+    <noscript id="deferred-styles"></noscript>
+    <script>
+        var loadDeferredStylesAndScripts = function () {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement);
+            addStylesNode.parentElement.removeChild(addStylesNode);
+
+            var scripts = document.createElement('script');
+            scripts.src = 'https://cdn.website.dish.co/static/20240703083800/static/js/website.body.mod.min.js';
+            document.body.appendChild(scripts);
+        };
+        if (document.location.href.indexOf("#") >= 0) {
+            loadDeferredStylesAndScripts();
+        } else {
+            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+            if (raf) raf(function () { window.setTimeout(loadDeferredStylesAndScripts, 0); });
+            else window.addEventListener('load', loadDeferredStylesAndScripts);
+        }
+    </script>
+    <script>
+        if (window._satellite) {
+            _satellite.pageBottom();
+        }
+    </script>
+</body>
+
+</html>

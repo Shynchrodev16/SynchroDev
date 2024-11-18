@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <title>SynchroDev - Développement Web, Design & Référencement SEO | Barbezieux, Charente</title>
+    <meta name="description"
+        content="SynchroDev propose des services de développement web, design web et référencement SEO à Barbezieux Saint-Hilaire, en Charente (16300). Que vous soyez une petite entreprise ou un particulier, notre équipe est là pour vous accompagner dans vos projets numériques.">
+
+    <meta name="keywords"
+        content="SynchroDev, développement web, design web, référencement SEO, SEO Charente, création site internet, services numériques, Barbezieux Saint-Hilaire, 16300, Charente, développement web étudiant, BTS SIO">
+
+    <meta property="og:title" content="SynchroDev - Développement Web, Design & SEO en Charente">
+    <meta property="og:description"
+        content="SynchroDev vous accompagne dans vos projets web : création de sites, design moderne et SEO efficace. Basés à Barbezieux, nous sommes une équipe d'étudiants en BTS SIO, passionnés et professionnels.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://synchrodev.fr">
+    <meta property="og:image" content="#">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SynchroDev - Développement Web, Design & SEO en Charente">
+    <meta name="twitter:description"
+        content="Découvrez les services web de SynchroDev, votre partenaire local en Charente pour le développement, le design et le référencement SEO.">
+    <meta name="twitter:image" content="#">
+
+    <meta name="geo.region" content="FR-16">
+    <meta name="geo.placename" content="Barbezieux Saint-Hilaire">
+    <meta name="geo.position" content="45.4697;0.1539">
+    <meta name="ICBM" content="45.4697, 0.1539">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="CSS & JS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS & JS/java.js">
+</head>
+
+<header class="mod-website-navigation navbar-fixed-top allowDesktopMode">
+    <a href="#" class="menu-switcher">
+        <img src="Images/barre-de-menu.png" alt="Menu" style="height: 40px; width: 40px; margin-top: -7px;">
+    </a>
+    <nav class="navigation">
+        <ul class="main-navigation">
+            <li><a href="index.html" data-button="accueil"><i class="fa fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="index.html#services" data-button="services"><i class="fa fa-cog"></i><span>Services</span></a></li>
+            <li><a href="index.html#caroussel" data-button="créations"><i class="fa fa-paint-brush"></i><span>Créations</span></a></li>
+            <li><a href="prix.html" data-button="prix"><i class="fa fa-tags"></i><span>Prix & Devis</span></a></li>
+            <li><a href="rendezvous.html" data-button="rdvtel"><i class="fa fa-phone"></i><span>RDV téléphonique</span></a></li>
+            <li><a href="login.html" data-button="connexion"><i class="fa fa-sign-in-alt"></i><span>Connexion</span></a></li>
+        </ul>
+    </nav>
+    <div class="overlay"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuSwitcher = document.querySelector('.menu-switcher');
+            const navigation = document.querySelector('.mod-website-navigation');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('.main-navigation a'); // Sélectionne tous les liens du menu
+
+            function closeMenu() {
+                navigation.classList.remove('active'); // Retire la classe 'active' pour fermer le menu et masquer l'overlay
+            }
+
+            if (menuSwitcher && navigation && overlay) {
+                // Ouvre ou ferme le menu quand on clique sur le switcher
+                menuSwitcher.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    navigation.classList.toggle('active'); // Affiche ou cache le menu et l'overlay
+                });
+
+                // Ferme le menu lorsqu'on clique sur l'overlay
+                overlay.addEventListener('click', closeMenu);
+
+                // Ferme le menu lorsqu'on clique en dehors
+                document.addEventListener('click', function (event) {
+                    if (!navigation.contains(event.target) && navigation.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+
+                // Ferme le menu lorsqu'on clique sur un lien
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                // Gestion du toucher sur les écrans tactiles pour le switcher
+                menuSwitcher.addEventListener('touchstart', function (event) {
+                    event.preventDefault();
+                    navigation.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</header>
+
+<div class="mention">
+
+    <h1>Conditions Générales d'Utilisation (CGU)</h1>
+    <p>Les présentes Conditions Générales d'Utilisation (CGU) ont pour objet de définir les modalités et conditions
+        d’utilisation du site <a href="http://www.synchrodev.fr">www.synchrodev.fr</a>. Toute personne accédant au Site
+        s'engage à respecter ces CGU.</p>
+
+    <h2 class="section-title">1. Présentation du Site</h2>
+    <p>Le Site www.synchrodev.fr est édité par SynchroDev, micro-entreprise inscrite sous le numéro SIREN 929214476,
+        ayant son siège social au 40 allée des Rossignols, 16300 Barbezieux-Saint-Hilaire.</p>
+    <p>Le site propose des services de création et développement de sites web. Il permet également aux utilisateurs de
+        prendre contact avec SynchroDev via des formulaires dédiés.</p>
+
+    <h2 class="section-title">2. Acceptation des conditions d’utilisation</h2>
+    <p>L'accès au Site et son utilisation impliquent l'acceptation pleine et entière des présentes CGU. L’utilisateur
+        s’engage à respecter ces conditions lors de chaque visite du Site. Si l’utilisateur n’accepte pas ces
+        conditions, il est prié de ne pas utiliser le Site.</p>
+
+    <h2 class="section-title">3. Accès au Site</h2>
+    <p>Le Site www.synchrodev.fr est accessible gratuitement à tout utilisateur disposant d’un accès à Internet.
+        Toutefois, l’utilisateur est responsable des frais d’accès à Internet et des équipements nécessaires pour
+        utiliser le Site.</p>
+    <p>SynchroDev ne peut garantir un accès continu et sans interruption au Site. SynchroDev se réserve le droit de
+        suspendre ou d'interrompre l'accès au Site pour des raisons techniques, de maintenance ou pour toute autre
+        raison, sans préavis ni indemnité.</p>
+
+    <h2 class="section-title">4. Services proposés</h2>
+    <p>Le Site présente les services proposés par SynchroDev, notamment :</p>
+    <ul>
+        <li>Création de sites web sur mesure.</li>
+        <li>Création de design web sur mesure.</li>
+        <li>Référencement SEO selon votre choix.</li>
+    </ul>
+    <p>Les informations fournies sur le Site sont données à titre indicatif et peuvent évoluer sans préavis.</p>
+
+    <h2 class="section-title">5. Propriété intellectuelle</h2>
+    <p>Tout le contenu du Site, incluant, de manière non limitative, les textes, graphismes, logos, images et vidéos,
+        est la propriété exclusive de SynchroDev ou de ses partenaires.</p>
+    <p>Toute reproduction, distribution, modification ou utilisation de ces éléments, sans l'autorisation préalable et
+        écrite de SynchroDev, est strictement interdite et constitue une contrefaçon sanctionnée par les articles
+        L.335-2 et suivants du Code de la propriété intellectuelle.</p>
+
+    <h2 class="section-title">6. Responsabilité</h2>
+    <p>SynchroDev s’efforce de fournir sur le Site des informations aussi précises que possible. Cependant, SynchroDev
+        ne saurait être tenu responsable en cas d’inexactitudes, d’omissions ou d'erreurs dans le contenu du Site.</p>
+    <p>De plus, SynchroDev ne pourra être tenu responsable des dommages directs ou indirects résultant de l'accès ou de
+        l'utilisation du Site, incluant les pertes de données ou virus qui pourraient affecter l’équipement de
+        l’utilisateur.</p>
+
+    <h2 class="section-title">7. Utilisation des formulaires de contact</h2>
+    <p>L’utilisateur peut utiliser les formulaires de contact mis à sa disposition sur le Site pour entrer en relation
+        avec SynchroDev. Les données personnelles fournies par l’utilisateur (nom, email, numéro de téléphone, message)
+        sont collectées uniquement pour répondre aux demandes des utilisateurs.</p>
+    <p>Ces informations ne seront pas transmises à des tiers sans le consentement préalable de l’utilisateur, sauf dans
+        les cas où la loi l'exige. L’utilisateur dispose d’un droit d’accès, de rectification et de suppression des
+        données le concernant, qu’il peut exercer en contactant SynchroDev à l’adresse suivante :
+        synchrodev.fr@gmail.com.</p>
+
+    <h2 class="section-title">8. Liens externes</h2>
+    <p>Le Site peut contenir des liens hypertextes vers d'autres sites internet. Ces liens sont fournis à titre
+        informatif uniquement. SynchroDev n’a aucun contrôle sur le contenu des sites tiers et décline toute
+        responsabilité concernant l’accès ou l’utilisation de ces sites.</p>
+
+    <h2 class="section-title">9. Modifications des CGU</h2>
+    <p>SynchroDev se réserve le droit de modifier les présentes CGU à tout moment. Les utilisateurs sont donc invités à
+        les consulter régulièrement. En cas de modification, les nouvelles CGU seront applicables dès leur mise en
+        ligne.</p>
+
+    <h2 class="section-title">10. Droit applicable et juridiction compétente</h2>
+    <p>Les présentes CGU sont régies par le droit français. En cas de litige, et après échec de toute tentative de
+        résolution amiable, les tribunaux français seront seuls compétents pour connaître de ce litige.</p>
+
+    <h2 class="section-title">11. Contact</h2>
+    <p>Pour toute question relative aux présentes CGU ou au Site, vous pouvez contacter SynchroDev par email à l'adresse
+        suivante : synchrodev.fr@gmail.com</p>
+</div>
+
+
+<section class="mod-website-footer mod-has-lightbox">
+    <ul class="mod-social-links">
+        <li>
+            <a href="https://www.facebook.com/jiji.burger/" target="_blank" data-social-link="facebook">
+
+                <i class="fab fa-facebook-f"></i>
+                <span>facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/@SynchroDev-fr" target="_blank" data-social-link="youtube">
+                <i class="fab fa-youtube"></i>
+                <span>Youtube</span>
+            </a>
+        </li>
+        <li>
+            <a href="https://www.instagram.com/synchrodev.fr/" target="_blank" data-social-link="instagram">
+                <i class="fab fa-instagram"></i>
+                <span>instagram</span>
+            </a>
+        </li>
+    </ul>
+    <div class="overlay"></div>
+    <div class="mentions">
+        <a href="MentionsLégales.html">Mentions Légales</a>
+        <a href="ConditionsGénérales.html">Conditions Générales d'Utilisation (CGU)</a>
+        <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+    </div>
+    <div class="divider brand-bg"></div>
+    <a href="index.html" target="_blank" class="brand-color" data-pointer="#Copyright">
+        © SynchroDev</a>
+    </div>
+</section>
+</footer>
+<noscript id="deferred-styles">
+</noscript>
+<script>
+    var loadDeferredStylesAndScripts = function () {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+
+        var scripts = document.createElement('script');
+        scripts.src = 'https://cdn.website.dish.co/static/20240703083800/static/js/website.body.mod.min.js';
+        document.body.appendChild(scripts);
+
+    };
+    if (document.location.href.indexOf("#") >= 0) {
+        loadDeferredStylesAndScripts();
+    } else {
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function () { window.setTimeout(loadDeferredStylesAndScripts, 0); });
+        else window.addEventListener('load', loadDeferredStylesAndScripts);
+    }
+</script>
+<script>
+    // Tell Adobe tag manager that DOM is closing
+    if (window._satellite) {
+        _satellite.pageBottom();
+    }
+</script>
+<script>
+    var config = config || {};
+    config.dashboardReorder = config.dashboardReorder || {};
+    config.dashboardReorder.layoutsData = [{
+        "name": null
+    }] || {};
+    config.dashboardReorder.selectedTemplate = "classic";
+</script>
+
+</html>

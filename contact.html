@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <title>Contactez-nous - SynchroDev | Développement Web & SEO en Charente</title>
+
+    <meta name="description"
+        content="Contactez SynchroDev pour vos projets de développement web, design et SEO. Basés à Barbezieux Saint-Hilaire, en Charente, nous répondons à toutes vos questions et demandes de devis rapidement.">
+
+    <meta name="keywords"
+        content="SynchroDev, contact, devis, développement web, design web, référencement SEO, services web Charente, Barbezieux Saint-Hilaire, 16300">
+
+    <meta property="og:title" content="Contactez-nous - SynchroDev">
+    <meta property="og:description"
+        content="Vous avez un projet web ou des questions ? Contactez SynchroDev en Charente pour un accompagnement personnalisé et des solutions adaptées.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://synchrodev.fr/contact">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contactez-nous - SynchroDev">
+    <meta name="twitter:description"
+        content="Besoin d'aide ou d'un devis ? Contactez SynchroDev en Charente pour un accompagnement sur mesure pour vos projets web.">
+    <meta name="twitter:image" content="https://synchrodev.fr/images/contact.jpg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="CSS & JS/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="CSS & JS/java.js">
+</head>
+
+<header class="mod-website-navigation navbar-fixed-top allowDesktopMode">
+    <a href="#" class="menu-switcher">
+        <img src="Images/barre-de-menu.png" alt="Menu" style="height: 40px; width: 40px; margin-top: -7px;">
+    </a>
+    <nav class="navigation">
+        <ul class="main-navigation">
+            <li><a href="index.html" data-button="accueil"><i class="fa fa-home"></i><span>Accueil</span></a></li>
+            <li><a href="index.html#services" data-button="services"><i class="fa fa-cog"></i><span>Services</span></a></li>
+            <li><a href="index.html#caroussel" data-button="créations"><i class="fa fa-paint-brush"></i><span>Créations</span></a></li>
+            <li><a href="prix.html" data-button="prix"><i class="fa fa-tags"></i><span>Tarifs & Devis</span></a></li>
+            <li><a href="rendezvous.html" data-button="rdvtel"><i class="fa fa-phone"></i><span>RDV téléphonique</span></a></li>
+            <li><a href="login.html" data-button="connexion"><i class="fa fa-sign-in-alt"></i><span>Connexion</span></a></li>
+        </ul>
+    </nav>
+    <div class="overlay"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuSwitcher = document.querySelector('.menu-switcher');
+            const navigation = document.querySelector('.mod-website-navigation');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('.main-navigation a'); // Sélectionne tous les liens du menu
+
+            function closeMenu() {
+                navigation.classList.remove('active'); // Retire la classe 'active' pour fermer le menu et masquer l'overlay
+            }
+
+            if (menuSwitcher && navigation && overlay) {
+                // Ouvre ou ferme le menu quand on clique sur le switcher
+                menuSwitcher.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    navigation.classList.toggle('active'); // Affiche ou cache le menu et l'overlay
+                });
+
+                // Ferme le menu lorsqu'on clique sur l'overlay
+                overlay.addEventListener('click', closeMenu);
+
+                // Ferme le menu lorsqu'on clique en dehors
+                document.addEventListener('click', function (event) {
+                    if (!navigation.contains(event.target) && navigation.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+
+                // Ferme le menu lorsqu'on clique sur un lien
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                // Gestion du toucher sur les écrans tactiles pour le switcher
+                menuSwitcher.addEventListener('touchstart', function (event) {
+                    event.preventDefault();
+                    navigation.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</header>
+<section class="mod-website-menu sortable-section MENU lazyload"
+    data-bgset=" [(max-width: 700px)] | [(max-width: 1000px)] | [(max-width: 1200px)] | ">
+    <a id="contact"></a>
+    <h2>
+        <span class="title brand-color brand-titleFont">Nous</span>
+        <span class="subtitle brand-subtitleFont2">Contacter</span>
+        <div class="divider-mark brand-bg"></div>
+    </h2>
+    <section class="quick-contact" style="margin-top: 48px;">
+        <h3>Contact</h3>
+        <form action="process_rdv.php" method="post">
+            <input type="text" id="name" name="name" placeholder="Votre nom" required aria-required="true">
+            <input type="email" id="email" name="email" placeholder="Votre email" required aria-required="true">
+            <input type="tel" id="phone" name="phone" placeholder="Votre numéro de téléphone" required
+                aria-required="true">
+            <textarea id="message" name="message" placeholder="Votre message" required aria-required="true"></textarea>
+            <div class="consent-container">
+                <input class="valid" type="checkbox" id="data-consent" name="data-consent" required aria-required="true"
+                    style="margin-left: 20px;">
+                <p>J'accepte que mes données personnelles soient collectées pour établir le contact.</p>
+            </div>
+
+            <button type="submit" class="submit-button" style="margin-top: 10px;">Envoyez</button>
+        </form>
+    </section>
+</section>
+
+<footer>
+    <section class="mod-website-footer mod-has-lightbox">
+        <ul class="mod-social-links">
+            <li>
+                <a href="https://www.facebook.com/jiji.burger/" target="_blank" data-social-link="facebook">
+
+                    <i class="fab fa-facebook-f"></i>
+                    <span>facebook</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@SynchroDev-fr" target="_blank" data-social-link="youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>Youtube</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/synchrodev.fr/" target="_blank" data-social-link="instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>instagram</span>
+                </a>
+            </li>
+        </ul>
+        <div class="overlay"></div>
+        <div class="mentions">
+            <a href="MentionsLégales.html">Mentions Légales</a>
+            <a href="ConditionsGénérales.html">Conditions Générales d'Utilisation (CGU)</a>
+            <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+        </div>
+        <div class="divider brand-bg"></div>
+        <a href="index.html" target="_blank" class="brand-color" data-pointer="#Copyright">
+            © SynchroDev</a>
+        </div>
+    </section>
+</footer>
+<!-- Script -->
+<noscript id="deferred-styles">
+</noscript>
+<script>
+    var loadDeferredStylesAndScripts = function () {
+        var addStylesNode = document.getElementById("deferred-styles");
+        var replacement = document.createElement("div");
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+
+        var scripts = document.createElement('script');
+        scripts.src = 'https://cdn.website.dish.co/static/20240703083800/static/js/website.body.mod.min.js';
+        document.body.appendChild(scripts);
+
+    };
+    if (document.location.href.indexOf("#") >= 0) {
+        loadDeferredStylesAndScripts();
+    } else {
+        var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+        if (raf) raf(function () { window.setTimeout(loadDeferredStylesAndScripts, 0); });
+        else window.addEventListener('load', loadDeferredStylesAndScripts);
+    }
+</script>
+<script>
+    if (window._satellite) {
+        _satellite.pageBottom();
+    }
+</script>
+<script>
+    var config = config || {};
+    config.dashboardReorder = config.dashboardReorder || {};
+    config.dashboardReorder.layoutsData = [{
+        "name": null
+    }] || {};
+    config.dashboardReorder.selectedTemplate = "classic";
+</script>
+<script href="java.js"></script>
+
+</html>

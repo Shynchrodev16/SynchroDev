@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <title>Nos tarifs - SynchroDev | Prix pour Développement Web, Design & SEO</title>
+
+    <meta name="description"
+        content="Découvrez les tarifs de SynchroDev pour le développement web, le design et le référencement SEO. Nous proposons des solutions adaptées à chaque budget, pour particuliers et entreprises.">
+
+    <meta name="keywords"
+        content="SynchroDev, tarifs développement web, prix design web, tarifs SEO, prix services web, Charente, Barbezieux Saint-Hilaire, budget création site internet">
+
+    <meta property="og:title" content="Nos Tarifs - SynchroDev">
+    <meta property="og:description"
+        content="Des solutions de développement web, design et SEO adaptées à votre budget. Consultez nos tarifs pour faire avancer vos projets numériques avec SynchroDev.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://synchrodev.fr/prix">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nos Tarifs - SynchroDev">
+    <meta name="twitter:description"
+        content="Consultez les tarifs de SynchroDev pour des services web de qualité. Solutions adaptées à votre budget, pour entreprises et particuliers en Charente.">
+    <meta name="twitter:image" content="https://synchrodev.fr/images/prix.jpg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="stylesheet" href="CSS & JS/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="CSS & JS/java.js">
+</head>
+
+<body>
+    <header class="mod-website-navigation navbar-fixed-top allowDesktopMode">
+        <a href="#" class="menu-switcher">
+            <img src="Images/barre-de-menu.png" alt="Menu" style="height: 40px; width: 40px; margin-top: -7px;">
+        </a>
+        <nav class="navigation">
+            <ul class="main-navigation">
+                <li><a href="index.html" data-button="accueil"><i class="fa fa-home"></i><span>Accueil</span></a></li>
+                <li><a href="index.html#services" data-button="services"><i class="fa fa-cog"></i><span>Services</span></a></li>
+                <li><a href="index.html#caroussel" data-button="créations"><i class="fa fa-paint-brush"></i><span>Créations</span></a></li>
+                <li><a href="prix.html" data-button="prix"><i class="fa fa-tags"></i><span>Tarifs & Devis</span></a></li>
+                <li><a href="rendezvous.html" data-button="rdvtel"><i class="fa fa-phone"></i><span>RDV téléphonique</span></a></li>
+                <li><a href="login.html" data-button="connexion"><i class="fa fa-sign-in-alt"></i><span>Connexion</span></a></li>
+            </ul>
+        </nav>
+        
+        <div class="overlay"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuSwitcher = document.querySelector('.menu-switcher');
+                const navigation = document.querySelector('.mod-website-navigation');
+                const overlay = document.querySelector('.overlay');
+                const navLinks = document.querySelectorAll('.main-navigation a'); // Sélectionne tous les liens du menu
+                function closeMenu() {
+                    navigation.classList.remove('active'); // Retire la classe 'active' pour fermer le menu et masquer l'overlay
+                }
+                if (menuSwitcher && navigation && overlay) {
+                    // Ouvre ou ferme le menu quand on clique sur le switcher
+                    menuSwitcher.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        navigation.classList.toggle('active'); // Affiche ou cache le menu et l'overlay
+                    });
+                    // Ferme le menu lorsqu'on clique sur l'overlay
+                    overlay.addEventListener('click', closeMenu);
+                    // Ferme le menu lorsqu'on clique en dehors
+                    document.addEventListener('click', function (event) {
+                        if (!navigation.contains(event.target) && navigation.classList.contains('active')) {
+                            closeMenu();
+                        }
+                    });
+                    // Ferme le menu lorsqu'on clique sur un lien
+                    navLinks.forEach(link => {
+                        link.addEventListener('click', closeMenu);
+                    });
+                    // Gestion du toucher sur les écrans tactiles pour le switcher
+                    menuSwitcher.addEventListener('touchstart', function (event) {
+                        event.preventDefault();
+                        navigation.classList.toggle('active');
+                    });
+                }
+            });
+        </script>
+    </header>
+    <!-- Prix & Devis-->
+    <section class="mod-website-menu sortable-section MENU lazyload"
+        data-bgset=" [(max-width: 700px)] | [(max-width: 1000px)] | [(max-width: 1200px)] | ">
+        <a id="prix"></a>
+        <h2>
+            <span class="title brand-color brand-titleFont">Nos</span>
+            <span class="subtitle brand-subtitleFont2">Tarifs</span>
+            <div class="divider-mark brand-bg"></div>
+        </h2>
+        <section id="pricing" class="pricing-section">
+            <div class="pricing-container">
+                <!-- Développement Web -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3><i class="fa-solid fa-code"></i>Développement Web</h3>
+                    </div>
+                    <p>(inclut Design Web & Référencement SEO)</p>
+                    <ul>
+                        <li>
+                            <span class="txt">Site Vitrine & E-commerce</span>
+                            <span class="price">Sur Devis</span>
+                        </li>
+                        <li>
+                            <span class="txt">Développement spécifique</span>
+                            <span class="price">Sur Devis</span>
+                        </li>
+                        <li>
+                            <span class="txt">Maintenance & Optimisation</span>
+                            <span class="price">Sur Devis</span>
+                        </li>
+                    </ul>
+                    <p class="pricing-justification">Le prix pour le développement web varie en fonction des
+                        fonctionnalités
+                        demandées, de la complexité du design et du niveau de personnalisation souhaité. Les sites
+                        vitrine
+                        sont idéaux pour une présence en ligne de base, tandis que les sites e-commerce nécessitent plus
+                        de
+                        fonctionnalités comme des options de paiement intégrées. La maintenance est idéale pour
+                        maintenir un site à jour ainsi qu'une sécurité renforcée régulièrement avec de nouvelles
+                        technologies.</p>
+                </div>
+                <!-- Référencement SEO -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3><i class="fa-solid fa-chart-line"></i>Référencement SEO</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="txt">SEO de base</span>
+                            <span class="price">700€</span>
+                        </li>
+                        <li>
+                            <span class="txt">Audit SEO</span>
+                            <span class="price">1000€</span>
+                        </li>
+                        <li>
+                            <span class="txt">SEO Mensuel</span>
+                            <span class="price">90€</span>
+                        </li>
+                    </ul>
+                    <p class="pricing-justification">Le SEO de base comprend l'optimisation de votre site pour les
+                        moteurs de recherche, tandis que l'audit SEO fournit
+                        une analyse approfondie et des recommandations pour améliorer le classement de votre site.</p>
+                </div>
+                <!-- Design Web -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3><i class="fa-solid fa-palette"></i>Design Web</h3>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="txt">Design site Vitrine & E-commerce</span>
+                            <span class="price">Sur Devis</span>
+                        </li>
+                        <li>
+                            <span class="txt">Design Développement spécifique</span>
+                            <span class="price">Sur Devis</span>
+                        </li>
+                    </ul>
+                    <p class="pricing-justification">Le coût du design web est déterminé par la complexité du design et
+                        le
+                        nombre de pages. Les designs pour sites e-commerce incluent des éléments supplémentaires comme
+                        des
+                        pages produits et des fonctionnalités spécifiques pour les boutiques en ligne. Le design de
+                        votre structure, site ou encore applications nécessite au préalable une étude de votre marque
+                        afin de correspondre à votre identité et vos besoins.</p>
+                </div>
+            </div>
+            <!-- Formulaire de demande de devis -->
+            <div id="devis" class="form-section">
+                <h2>Demandez un devis</h2>
+                <form class="contact-form" action="https://formspree.io/f/myzygpnr" method="POST">
+                    <div class="form-left">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                        <label for="email">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                        <label for="category">Catégorie</label>
+                        <select id="category" class="category" name="category" required>
+                            <option value="web-development">Développement Web</option>
+                            <option value="design-web">Design Web</option>
+                            <option value="seo">Référencement SEO</option>
+                        </select>
+                    </div>
+                    <div class="form-right">
+                        <label for="message">Votre message</label>
+                        <textarea id="message" name="message" placeholder="Écrivez votre message ici..." required></textarea>
+                        <div class="consent-container">
+                            <input class="valid" type="checkbox" id="data-consent" name="data-consent" required aria-required="true">
+                            <p>J'accepte que mes données personnelles soient collectées pour établir le devis.</p>
+                        </div>
+                        <div class="form-bas">
+                            <button type="submit" class="submit-button2">Envoyer la demande 24/48H</button>
+                        </div>
+                    </div>
+        
+                </form>
+                </div>
+        </section>
+        <section class="mod-website-contacts sortable-section CONTACT_FORM"
+            data-bgset="[(max-width: 700px)] path-to-small-image.jpg | [(max-width: 1000px)] path-to-medium-image.jpg | [(max-width: 1200px)] path-to-large-image.jpg">
+            <div class="contact-banner" style="margin-bottom: -40px; margin-top: -30px;">
+                <div class="contact-block-holder">
+                    <div class="contact-block">
+                        <a href="index.html" class="brand-color click-tracker" data-link="contact" data-page="#contact"
+                            aria-label="Visitez SynchroDev.fr">
+                            <h3>Nous trouver</h3>
+                            SynchroDev.fr
+
+                        </a>
+                    </div>
+                    <div class="contact-block">
+                        <a href="mailto:synchrodev.fr@gmail.com" class="brand-color email" data-contact-link="email"
+                            aria-label="Envoyer un e-mail à SynchroDev">
+                            <h3>Nous contacter par e-mail</h3>
+                            synchrodev.fr@gmail.com
+                        </a>
+                    </div>
+                    <div class="contact-block">
+                        <a href="tel:+33648784857" class="brand-color" data-contact-link="phone"
+                            aria-label="Appeler SynchroDev par téléphone">
+                            <h3>Nous contacter par téléphone</h3>
+                            +33 6 48 78 48 57
+                        </a>
+                    </div>
+                    <a href="contact.html" class="button-contact" style="color:#fff;border: #d5f2ff79 solid 1px;"> Nous
+						contacter</a>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <section class="mod-website-footer mod-has-lightbox">
+            <ul class="mod-social-links">
+                <li>
+                    <a href="https://www.facebook.com/jiji.burger/" target="_blank" data-social-link="facebook">
+
+                        <i class="fab fa-facebook-f"></i>
+                        <span>facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@SynchroDev-fr" target="_blank" data-social-link="youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>Youtube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/synchrodev.fr/" target="_blank" data-social-link="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>instagram</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="overlay"></div>
+            <div class="mentions">
+                <a href="MentionsLégales.html">Mentions Légales</a>
+                <a href="ConditionsGénérales.html">Conditions Générales d'Utilisation (CGU)</a>
+                <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+            </div>
+            <div class="divider brand-bg"></div>
+            <a href="index.html" target="_blank" class="brand-color" data-pointer="#Copyright">
+                © SynchroDev</a>
+            </div>
+        </section>
+    </footer>
+    <!-- Script -->
+    <noscript id="deferred-styles">
+    </noscript>
+    <script>
+        var loadDeferredStylesAndScripts = function () {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement)
+            addStylesNode.parentElement.removeChild(addStylesNode);
+
+            var scripts = document.createElement('script');
+            scripts.src = 'https://cdn.website.dish.co/static/20240703083800/static/js/website.body.mod.min.js';
+            document.body.appendChild(scripts);
+
+        };
+        if (document.location.href.indexOf("#") >= 0) {
+            loadDeferredStylesAndScripts();
+        } else {
+            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+            if (raf) raf(function () { window.setTimeout(loadDeferredStylesAndScripts, 0); });
+            else window.addEventListener('load', loadDeferredStylesAndScripts);
+        }
+    </script>
+    <script>
+        if (window._satellite) {
+            _satellite.pageBottom();
+        }
+    </script>
+    <script>
+        var config = config || {};
+        config.dashboardReorder = config.dashboardReorder || {};
+        config.dashboardReorder.layoutsData = [{
+            "name": null
+        }] || {};
+        config.dashboardReorder.selectedTemplate = "classic";
+    </script>
+    <script href="java.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+
+<head>
+    <title>Profil Utilisateur - SynchroDev | Espace Personnel et Suivi de Projets</title>
+
+    <meta name="description"
+        content="Accédez à votre profil utilisateur SynchroDev pour gérer vos projets web, suivre l’avancement de votre référencement SEO et rester en contact avec l'équipe.">
+    <meta name="keywords"
+        content="Profil utilisateur, SynchroDev, gestion de projets, espace personnel, suivi SEO, développement web, Barbezieux Saint-Hilaire, Charente, 16300, consultation en ligne, espace client">
+    <meta property="og:title" content="Profil Utilisateur - SynchroDev">
+    <meta property="og:description"
+        content="Consultez et gérez vos informations personnelles, suivez vos projets et interagissez avec l'équipe SynchroDev sur votre profil utilisateur.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://synchrodev.fr/profil-utilisateur">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="stylesheet" href="CSS & JS/style.css">
+    <link rel="stylesheet" href="CSS & JS/java.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="mod-website-navigation navbar-fixed-top allowDesktopMode">
+        <a href="#" class="menu-switcher">
+            <img src="Images/barre-de-menu.png" alt="Menu" style="height: 40px; width: 40px; margin-top: -7px;">
+        </a>
+        <nav class="navigation">
+            <ul class="main-navigation">
+                <li><a href="index.html" data-button="accueil"><i class="fa fa-home"></i><span>Accueil</span></a></li>
+                <li><a href="index.html#services" data-button="services"><i
+                            class="fa fa-cog"></i><span>Services</span></a></li>
+                <li><a href="index.html#caroussel" data-button="créations"><i
+                            class="fa fa-paint-brush"></i><span>Créations</span></a></li>
+                <li><a href="prix.html" data-button="prix"><i class="fa fa-tags"></i><span>Tarifs & Devis</span></a>
+                </li>
+                <li><a href="rendezvous.html" data-button="rdvtel"><i class="fa fa-phone"></i><span>RDV
+                            téléphonique</span></a></li>
+            </ul>
+        </nav>
+        <div class="overlay"></div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuSwitcher = document.querySelector('.menu-switcher');
+            const navigation = document.querySelector('.mod-website-navigation');
+            const overlay = document.querySelector('.overlay');
+            const navLinks = document.querySelectorAll('.main-navigation a');
+
+            function closeMenu() {
+                navigation.classList.remove('active');
+            }
+
+            if (menuSwitcher && navigation && overlay) {
+                menuSwitcher.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    navigation.classList.toggle('active');
+                });
+
+                overlay.addEventListener('click', closeMenu);
+                document.addEventListener('click', function (event) {
+                    if (!navigation.contains(event.target) && navigation.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
+            }
+        });
+    </script>
+
+    <section class="mod-website-contacts sortable-section CONTACT_FORM"
+        data-bgset="[(max-width: 700px)] path-to-small-image.jpg | [(max-width: 1000px)] path-to-medium-image.jpg | [(max-width: 1200px)] path-to-large-image.jpg">
+        <a id="carousel"></a>
+        <h2>
+            <span class="title brand-color brand-titleFont" style="margin-top: 45px;">Espaces</span>
+            <span class="subtitle brand-titleFont2">Utilisateur</span>
+            <div class="divider-mark brand-bg"></div>
+        </h2>
+
+        <main class="tableau-de-bord-utilisateur">
+            <section class="entete-tableau-de-bord">
+                <div class="bienvenue-utilisateur">
+                    <img src="Images/default-avatar.png" alt="Photo de profil" class="photo-profil">
+                    <div class="texte-bienvenue">
+                        <h2>Bienvenue, <span id="nomUtilisateur">Tom Ingremeau Maillet</span></h2>
+                    </div>
+                </div>
+            </section>
+
+            <div class="conteneur-tableau-de-bord">
+                <nav class="navigation-tableau-de-bord">
+                    <ul>
+                        <li class="actif" data-onglet="profil">
+                            <i class="fas fa-user"></i> Profil
+                        </li>
+                        <li data-onglet="rendez-vous">
+                            <i class="fas fa-calendar-alt"></i> Rendez-vous
+                        </li>
+                        <li data-onglet="devis">
+                            <i class="fas fa-file-invoice"></i> Devis
+                        </li>
+                        <li data-onglet="factures">
+                            <i class="fas fa-receipt"></i> Factures
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="contenu-tableau-de-bord">
+                    <!-- Section Profil -->
+                    <div id="profil" class="contenu-onglet actif">
+                        <div class="carte-profil">
+                            <div class="entete-profil">
+                                <h3>Informations personnelles</h3>
+                                <button class="bouton-modifier" onclick="toggleEditMode()">
+                                    <i class="fas fa-edit"></i> Modifier
+                                </button>
+                            </div>
+                            <form id="formulaireProfil" class="formulaire-profil">
+                                <div class="groupe-champ">
+                                    <label>Nom</label>
+                                    <input type="text" value="Ingremeau Maillet" disabled>
+                                </div>
+                                <div class="groupe-champ">
+                                    <label>Prénom</label>
+                                    <input type="text" value="Tom" disabled>
+                                </div>
+                                <div class="groupe-champ">
+                                    <label>Email</label>
+                                    <input type="email" value="tomingremeaumaillet@gmail.com" disabled>
+                                </div>
+                                <div class="groupe-champ">
+                                    <label>Téléphone</label>
+                                    <input type="tel" value="06 48 78 48 57" disabled>
+                                </div>
+                                <div class="actions-formulaire" style="display: none;">
+                                    <button type="submit" class="bouton-enregistrer">Enregistrer</button>
+                                    <button type="button" class="bouton-annuler" onclick="cancelEdit()">Annuler</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Section Rendez-vous -->
+                    <div id="rendez-vous" class="contenu-onglet">
+                        <div class="liste-rendez-vous">
+                            <div class="carte-rendez-vous">
+                                <div class="entete-rendez-vous">
+                                    <h3>Consultation Web</h3>
+                                    <span class="statut a-venir">À venir</span>
+                                </div>
+                                <div class="details-rendez-vous">
+                                    <p><i class="far fa-calendar"></i> 16 Février 2024 - 15:00</p>
+                                    <p><i class="far fa-user"></i> Consultant: Auriault Owen</p>
+                                    <p><i class="far fa-comment"></i> Type: Consultation en ligne</p>
+                                </div>
+                                <div class="actions-rendez-vous">
+                                    <button class="bouton-annuler" onclick="confirmCancellation()">Annuler</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Devis -->
+                    <div id="devis" class="contenu-onglet">
+                        <div class="liste-devis">
+                            <div class="carte-devis">
+                                <div class="entete-devis">
+                                    <h3>Devis #0001</h3>
+                                    <span class="statut en-attente">En attente</span>
+                                </div>
+                                <div class="details-devis">
+                                    <p><i class="far fa-calendar"></i> Date: 26 janvier 2024</p>
+                                    <p><i class="far fa-euro-sign"></i> Montant: 2 000€</p>
+                                    <p><i class="far fa-file-alt"></i> Projet: Site Web E-commerce</p>
+                                </div>
+                                <div class="actions-devis">
+                                    <button class="bouton-telecharger" onclick="downloadPDF('devis_0001')">
+                                        <i class="fas fa-download"></i> Télécharger
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section Factures -->
+                    <div id="factures" class="contenu-onglet">
+                        <div class="liste-factures">
+                            <div class="carte-facture">
+                                <div class="entete-facture">
+                                    <h3>Facture #0001</h3>
+                                    <span class="statut paye">Payée</span>
+                                </div>
+                                <div class="details-facture">
+                                    <p><i class="far fa-calendar"></i> Date: 10 Février 2024</p>
+                                    <p><i class="far fa-euro-sign"></i> Montant: 2 000€</p>
+                                    <p><i class="far fa-check-circle"></i> Statut: Payée</p>
+                                </div>
+                                <div class="actions-facture">
+                                    <button class="bouton-telecharger" onclick="downloadPDF('facture_0001')">
+                                        <i class="fas fa-download"></i> Télécharger
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="mod-website-contacts sortable-section CONTACT_FORM">
+        <div class="contact-banner">
+            <div class="contact-block-holder">
+                <div class="contact-block">
+                    <a href="index.html" class="brand-color click-tracker" data-link="contact"
+                        aria-label="Visitez SynchroDev.fr">
+                        <h3>Nous trouver</h3>
+                        SynchroDev.fr
+                    </a>
+                </div>
+                <div class="contact-block">
+                    <a href="mailto:synchrodev.fr@gmail.com" class="brand-color email"
+                        aria-label="Envoyer un e-mail à SynchroDev">
+                        <h3>Nous contacter par e-mail</h3>
+                        synchrodev.fr@gmail.com
+                    </a>
+                </div>
+                <div class="contact-block">
+                    <a href="tel:+33648784857" class="brand-color" aria-label="Appeler SynchroDev par téléphone">
+                        <h3>Nous contacter par téléphone</h3>
+                        +33 6 48 78 48 57
+                    </a>
+                </div>
+                <a href="contact.html" class="button-contact" style="color:#fff;border: #d5f2ff79 solid 1px;"> Nous
+                    contacter</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <section class="mod-website-footer mod-has-lightbox">
+            <ul class="mod-social-links">
+                <li>
+                    <a href="https://www.facebook.com/jiji.burger/" target="_blank" data-social-link="facebook">
+
+                        <i class="fab fa-facebook-f"></i>
+                        <span>facebook</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@SynchroDev-fr" target="_blank" data-social-link="youtube">
+                        <i class="fab fa-youtube"></i>
+                        <span>Youtube</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/synchrodev.fr/" target="_blank" data-social-link="instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>instagram</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="overlay"></div>
+            <div class="mentions">
+                <a href="MentionsLégales.html">Mentions Légales</a>
+                <a href="ConditionsGénérales.html">Conditions Générales d'Utilisation (CGU)</a>
+                <a href="Politique de confidentialité.html">Politique de confidentialité</a>
+            </div>
+            <div class="divider brand-bg"></div>
+            <a href="index.html" target="_blank" class="brand-color" data-pointer="#Copyright">
+                © SynchroDev</a>
+            </div>
+        </section>
+    </footer>
+
+
+    <!-- Script -->
+    <script>
+        // Navigation dans le tableau de bord
+        document.querySelectorAll('.navigation-tableau-de-bord li').forEach(onglet => {
+            onglet.addEventListener('click', () => {
+                // Retirer la classe actif de tous les onglets
+                document.querySelectorAll('.navigation-tableau-de-bord li').forEach(o => o.classList.remove('actif'));
+                document.querySelectorAll('.contenu-onglet').forEach(c => c.classList.remove('actif'));
+
+                // Ajouter la classe actif à l'onglet cliqué
+                onglet.classList.add('actif');
+                document.getElementById(onglet.dataset.onglet).classList.add('actif');
+            });
+        });
+
+        // Gestion du mode édition du profil
+        function toggleEditMode() {
+            const inputs = document.querySelectorAll('#formulaireProfil input');
+            const actions = document.querySelector('.actions-formulaire');
+            const editBtn = document.querySelector('.bouton-modifier');
+
+            inputs.forEach(input => input.disabled = !input.disabled);
+            actions.style.display = actions.style.display === 'none' ? 'flex' : 'none';
+            editBtn.style.display = 'none';
+        }
+
+        // Annuler les modifications
+        function cancelEdit() {
+            const inputs = document.querySelectorAll('#formulaireProfil input');
+            const actions = document.querySelector('.actions-formulaire');
+            const editBtn = document.querySelector('.bouton-modifier');
+
+            inputs.forEach(input => {
+                input.disabled = true;
+                input.value = input.defaultValue; // Réinitialiser à la valeur par défaut
+            });
+            actions.style.display = 'none';
+            editBtn.style.display = 'block';
+        }
+
+        // Enregistrer les modifications
+        function saveChanges(event) {
+            event.preventDefault(); // Empêcher le rechargement de la page
+
+            const inputs = document.querySelectorAll('#formulaireProfil input');
+            inputs.forEach(input => {
+                input.defaultValue = input.value; // Mettre à jour la valeur par défaut
+                input.disabled = true; // Désactiver les champs après l'enregistrement
+            });
+
+            const actions = document.querySelector('.actions-formulaire');
+            const editBtn = document.querySelector('.bouton-modifier');
+
+            actions.style.display = 'none'; // Cacher les boutons de sauvegarde et d'annulation
+            editBtn.style.display = 'block'; // Réafficher le bouton "Modifier"
+
+            alert('Modifications enregistrées avec succès !'); // Feedback utilisateur
+        }
+
+        // Ajouter l'événement pour soumettre le formulaire
+        document.querySelector('#formulaireProfil').addEventListener('submit', saveChanges);
+
+        // Confirmation d'annulation de rendez-vous
+        function confirmCancellation() {
+            if (confirm('Êtes-vous sûr de vouloir annuler ce rendez-vous ?')) {
+                // Logique d'annulation
+                alert('Le rendez-vous a été annulé.');
+            }
+        }
+
+        // Téléchargement de documents
+        function downloadPDF(docId) {
+            // Logique de téléchargement
+            alert(`Téléchargement du document ${docId} en cours...`);
+        }
+    </script>
+
+    <noscript id="deferred-styles">
+    </noscript>
+    <script>
+        var loadDeferredStylesAndScripts = function () {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement)
+            addStylesNode.parentElement.removeChild(addStylesNode);
+            var scripts = document.createElement('script');
+            scripts.src = 'java.js';
+            document.body.appendChild(scripts);
+        };
+        if (document.location.href.indexOf("#") >= 0) {
+            loadDeferredStylesAndScripts();
+        } else {
+            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+            if (raf) raf(function () { window.setTimeout(loadDeferredStylesAndScripts, 0); });
+            else window.addEventListener('load', loadDeferredStylesAndScripts);
+        }
+    </script>
+    <script>
+        if (window._satellite) {
+            _satellite.pageBottom();
+        }
+    </script>
+    <script>
+        var config = config || {};
+        config.dashboardReorder = config.dashboardReorder || {};
+        config.dashboardReorder.layoutsData = [{
+            "name": null
+        }] || {};
+        config.dashboardReorder.selectedTemplate = "classic";
+    </script>
+
+</html>
